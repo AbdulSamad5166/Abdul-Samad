@@ -42,14 +42,14 @@ Day 1/
 
 ## 📄 Page Sections
 
-| Section | Element ID | Content Description |
-|---|---|---|
-| **Header** | N/A | Website branding, name, student title, and `<nav>` menu |
-| **Home** | `#home` | Main `<h1>` greeting, summary bio, and profile photo |
-| **About** | `#about` | 3 detailed paragraphs covering academic background and learning goals |
-| **Skills** | `#skills` | Unordered list of fundamental technologies (HTML5, CSS3, JS, Git, GitHub) |
-| **Education** | `#education` | Structured table of degrees, institutions, and completion years |
-| **Projects** | `#projects` | Independent `<article>` blocks for portfolio projects with links |
-| **Services** | `#services` | List of core development services offered |
-| **Contact** | `#contact` | HTML5 form with name, email, phone, subject, and message fields |
-| **Footer** | N/A | Copyright information, external links, and "Back to Top" navigation |
+| Section       | Element ID   | Content Description                                                       |
+| ------------- | ------------ | ------------------------------------------------------------------------- |
+| **Header**    | N/A          | Website branding, name, student title, and `<nav>` menu                   |
+| **Home**      | `#home`      | Main `<h1>` greeting, summary bio, and profile photo                      |
+| **About**     | `#about`     | 3 detailed paragraphs covering academic background and learning goals     |
+| **Skills**    | `#skills`    | Unordered list of fundamental technologies (HTML5, CSS3, JS, Git, GitHub) |
+| **Education** | `#education` | Structured table of degrees, institutions, and completion years           |
+| **Projects**  | `#projects`  | Independent `<article>` blocks for portfolio projects with links          |
+| **Services**  | `#services`  | List of core development services offered                                 |
+| **Contact**   | `#contact`   | HTML5 form with name, email, phone, subject, and message fields           |
+| **Footer**    | N/A          | Copyright information, external links, and "Back to Top" navigation       |
