@@ -53,12 +53,3 @@ Day 1/
 | **Services** | `#services` | List of core development services offered |
 | **Contact** | `#contact` | HTML5 form with name, email, phone, subject, and message fields |
 | **Footer** | N/A | Copyright information, external links, and "Back to Top" navigation |
-
----
-
-## 🚫 Technology Constraints Maintained
-
-- ❌ No CSS (No external stylesheet, no `<style>` tags, no inline `style` attributes)
-- ❌ No JavaScript (No `<script>` tags, no DOM manipulation, no frameworks)
-- ❌ No CSS Frameworks (No Bootstrap, Tailwind, etc.)
-- ❌ No Unnecessary `<div>` elements or ad-hoc class names
