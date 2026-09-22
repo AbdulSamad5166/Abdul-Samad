@@ -1,0 +1,365 @@
+/* ==========================================================================
+   FRONTEND ENGINEERING INTERNSHIP - WEEK 1, DAY 2
+   TOPIC: CSS FUNDAMENTALS
+   STUDENT: Abdul Samad
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CONCEPT 1: WHAT IS CSS
+   CSS (Cascading Style Sheets) is a stylesheet language used to define the
+   presentation, layout, colors, typography, and visual aesthetics of an
+   HTML document, separating structure (HTML) from design (CSS).
+   -------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   CONCEPT 2: INLINE, INTERNAL AND EXTERNAL CSS
+   - External CSS: Written in this dedicated .css file and linked via <link>
+   - Internal CSS: Defined within <style> tags inside the HTML <head>
+   - Inline CSS: Applied directly to an HTML element using the style="" attribute
+   This project primarily uses EXTERNAL CSS (style.css) following industry best practice.
+   -------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   CONCEPT 3: CSS SELECTORS
+   Demonstrating:
+   - Universal selector: *
+   - Element selectors: body, header, h1, h2, p, table, nav, footer
+   - Class selectors: .section-card, .project-card, .skill-badge, .btn-submit
+   - ID selectors: #home, #about, #skills, #education, #projects, #services, #contact
+   - Descendant & Grouping selectors: th, td, nav li, header h1
+   -------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   CONCEPT 11: BOX MODEL (Content, Padding, Border, Margin)
+   Universal selector resetting defaults and standardizing box-sizing.
+   -------------------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   CONCEPT 5: COLORS (Hexadecimal, RGB, Named colors)
+   CONCEPT 6: FONTS AND TYPOGRAPHY (font-family, font-size, font-weight, line-height)
+   CONCEPT 8: BACKGROUNDS (background-color)
+   CONCEPT 14: CSS UNITS (px, %)
+   -------------------------------------------------------------------------- */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; /* Concept 6: Font family */
+    font-size: 16px;                           /* Concept 14: px unit */
+    line-height: 1.6;                          /* Concept 6: Typography line height */
+    color: #2d3748;                            /* Concept 5: Hex color (Dark slate) */
+    background-color: #f0f4f8;                 /* Concept 8: Background color (Soft light gray-blue) */
+}
+
+/* --------------------------------------------------------------------------
+   CONCEPT 4: CLASSES AND IDS
+   CONCEPT 7: TEXT STYLING (text-align, text-transform, letter-spacing)
+   CONCEPT 12: MARGIN AND PADDING
+   CONCEPT 9: BORDERS (border-bottom)
+   HEADER STYLING
+   -------------------------------------------------------------------------- */
+header {
+    background-color: #1a365d;                 /* Concept 8: Navy blue background */
+    color: #ffffff;                            /* Concept 5: Named/Hex white text */
+    text-align: center;                        /* Concept 7: Centered text */
+    padding: 35px 20px;                        /* Concept 12: Padding (top/bottom, left/right) */
+    border-bottom: 4px solid #2b6cb0;          /* Concept 9: Solid accent border */
+}
+
+header h1 {
+    font-size: 32px;                           /* Concept 6 & 14: Font size in px */
+    font-weight: 700;                          /* Concept 6: Font weight */
+    margin-bottom: 8px;                        /* Concept 12: Margin bottom */
+    letter-spacing: 1px;                       /* Concept 7: Letter spacing */
+}
+
+header p {
+    font-size: 18px;                           /* Concept 6: Font size */
+    color: #e2e8f0;                            /* Concept 5: Light gray hex text */
+    margin-bottom: 6px;                        /* Concept 12: Margin */
+}
+
+/* --------------------------------------------------------------------------
+   CONCEPT 15: DISPLAY PROPERTY (display: inline-block, display: block)
+   CONCEPT 10: BORDER RADIUS
+   NAVIGATION STYLING
+   -------------------------------------------------------------------------- */
+nav {
+    background-color: #010408;                 /* Concept 8: Dark background */
+    text-align: center;                        /* Concept 7: Text alignment */
+    padding: 12px 10px;                        /* Concept 12: Padding */
+}
+
+nav ul {
+    list-style-type: none;                     /* Remove bullet styling */
+    margin: 0;                                 /* Concept 12: Margin */
+    padding: 0;                                /* Concept 12: Padding */
+}
+
+nav li {
+    display: inline-block;                     /* Concept 15: display inline-block */
+    margin: 4px 6px;                           /* Concept 12: Margin around nav items */
+}
+
+nav a {
+    display: inline-block;                     /* Concept 15: display inline-block */
+    color: #edf2f7;                            /* Concept 5: Text color */
+    text-decoration: none;                     /* Concept 7: Remove default underline */
+    font-size: 15px;                           /* Concept 14: Unit in px */
+    font-weight: 600;                          /* Concept 6: Font weight */
+    padding: 8px 15px;                         /* Concept 12: Padding inside buttons */
+    border-radius: 4px;                        /* Concept 10: Border radius */
+    background-color: #4a5568;                 /* Concept 8: Button background */
+}
+
+/* --------------------------------------------------------------------------
+   CONCEPT 13: WIDTH AND HEIGHT
+   CONCEPT 14: CSS UNITS (%, px)
+   MAIN LAYOUT CONTAINER
+   -------------------------------------------------------------------------- */
+main {
+    width: 90%;                                /* Concept 14: Percentage unit */
+    max-width: 850px;                          /* Concept 13: Width restriction in px */
+    margin: 30px auto;                         /* Concept 12: Margin auto for horizontal centering */
+}
+
+/* --------------------------------------------------------------------------
+   CONCEPT 4: CLASS SELECTORS (.section-card)
+   CONCEPT 8: BACKGROUNDS
+   CONCEPT 9: BORDERS
+   CONCEPT 10: BORDER RADIUS
+   CONCEPT 11: BOX MODEL (Content, Padding, Border, Margin)
+   -------------------------------------------------------------------------- */
+.section-card {
+    background-color: #ffffff;                 /* Concept 8: White card background */
+    margin-bottom: 25px;                       /* Concept 12: Margin bottom separation */
+    padding: 28px 30px;                        /* Concept 12: Internal padding */
+    border: 1px solid #cbd5e0;                 /* Concept 9: 1px solid border */
+    border-radius: 8px;                        /* Concept 10: Rounded corners */
+}
+
+/* Concept 4: ID Selectors targeting individual sections */
+#home,
+#about,
+#skills,
+#education,
+#projects,
+#services,
+#contact {
+    display: block;                            /* Concept 15: Display block for section containers */
+    scroll-margin-top: 20px;                   /* Offset spacing when navigating via anchor links */
+}
+
+/* Section Headings */
+h2 {
+    color: #1a365d;                            /* Concept 5: Navy text color */
+    font-size: 24px;                           /* Concept 6: Font size */
+    font-weight: 700;                          /* Concept 6: Bold weight */
+    margin-bottom: 16px;                       /* Concept 12: Margin */
+    border-bottom: 2px solid #e2e8f0;          /* Concept 9: Bottom border divider */
+    padding-bottom: 8px;                       /* Concept 12: Padding */
+}
+
+p {
+    margin-bottom: 14px;                       /* Concept 12: Paragraph spacing */
+    color: #4a5568;                            /* Concept 5: Readable text color */
+}
+
+/* --------------------------------------------------------------------------
+   CONCEPT 10: BORDER RADIUS (Circular avatar)
+   CONCEPT 13: WIDTH AND HEIGHT
+   CONCEPT 15: DISPLAY PROPERTY (display: block)
+   PROFILE IMAGE STYLING
+   -------------------------------------------------------------------------- */
+.profile-wrapper {
+    text-align: center;                        /* Concept 7: Center image alignment */
+    margin: 15px 0 20px 0;                     /* Concept 12: Margin */
+}
+
+.profile-img {
+    display: block;                            /* Concept 15: display: block */
+    width: 180px;                              /* Concept 13: Fixed width */
+    height: 180px;                             /* Concept 13: Fixed height */
+    margin: 0 auto;                            /* Concept 12: Horizontal centering */
+    border: 4px solid #13101052;                 /* Concept 9: Blue border */
+    border-radius: 50%;                        /* Concept 10: Circular border-radius */
+    object-fit: cover;                         /* Image fitting */
+}
+
+/* --------------------------------------------------------------------------
+   CONCEPT 4: CLASSES (.skills-list, .skill-badge)
+   CONCEPT 15: DISPLAY PROPERTY (display: inline-block)
+   SKILLS SECTION STYLING
+   -------------------------------------------------------------------------- */
+.skills-list {
+    list-style-type: none;                     /* Remove bullet points */
+    padding: 0;                                /* Concept 12: Padding */
+    margin-top: 10px;                          /* Concept 12: Margin */
+}
+
+.skill-badge {
+    display: inline-block;                     /* Concept 15: display inline-block */
+    background-color: #ebf8ff;                 /* Concept 8: Light blue background */
+    color: #2b6cb0;                            /* Concept 5: Darker blue text */
+    border: 1px solid #bee3f8;                 /* Concept 9: Subtle border */
+    border-radius: 20px;                       /* Concept 10: Pill-shaped border-radius */
+    padding: 8px 18px;                         /* Concept 12: Inner padding */
+    margin: 6px 8px 6px 0;                     /* Concept 12: Spacing between badges */
+    font-weight: 600;                          /* Concept 6: Font weight */
+    font-size: 14px;                           /* Concept 14: px unit */
+}
+
+/* --------------------------------------------------------------------------
+   CONCEPT 9: BORDERS (border, border-collapse)
+   CONCEPT 13: WIDTH (100%)
+   EDUCATION TABLE STYLING
+   -------------------------------------------------------------------------- */
+.education-table {
+    width: 100%;                               /* Concept 13 & 14: 100% full container width */
+    border-collapse: collapse;                 /* Concept 9: Collapse adjacent borders */
+    margin-top: 15px;                          /* Concept 12: Margin */
+}
+
+.education-table th,
+.education-table td {
+    border: 1px solid #cbd5e0;                 /* Concept 9: Cell borders */
+    padding: 12px 16px;                        /* Concept 12: Padding inside cells */
+    text-align: left;                          /* Concept 7: Text alignment */
+}
+
+.education-table th {
+    background-color: #edf2f7;                 /* Concept 8: Header background */
+    color: #1a202c;                            /* Concept 5: Text color */
+    font-weight: 700;                          /* Concept 6: Bold font weight */
+}
+
+.education-table td {
+    background-color: #ffffff;                 /* Concept 8: White cell background */
+    color: #4a5568;                            /* Concept 5: Dark gray text */
+}
+
+/* --------------------------------------------------------------------------
+   CONCEPT 3: ELEMENT & CLASS COMBINED SELECTORS (article.project-card)
+   CONCEPT 10: BORDER RADIUS
+   PROJECTS SECTION STYLING
+   -------------------------------------------------------------------------- */
+article.project-card {
+    background-color: #f8fafc;                 /* Concept 8: Subtle background */
+    border: 1px solid #e2e8f0;                 /* Concept 9: Border */
+    border-radius: 6px;                        /* Concept 10: Border radius */
+    padding: 20px;                             /* Concept 12: Padding */
+    margin-bottom: 18px;                       /* Concept 12: Margin bottom */
+}
+
+.project-card h3 {
+    color: #2b6cb0;                            /* Concept 5: Blue title */
+    font-size: 20px;                           /* Concept 6: Font size */
+    margin-bottom: 8px;                        /* Concept 12: Margin */
+}
+
+.project-link {
+    display: inline-block;                     /* Concept 15: display inline-block */
+    margin-top: 10px;                          /* Concept 12: Margin */
+    padding: 7px 16px;                         /* Concept 12: Padding */
+    background-color: #2b6cb0;                 /* Concept 8: Blue background */
+    color: #ffffff;                            /* Concept 5: White text */
+    text-decoration: none;                     /* Concept 7: Remove link underline */
+    border-radius: 4px;                        /* Concept 10: Border radius */
+    font-size: 14px;                           /* Concept 14: Unit px */
+    font-weight: 600;                          /* Concept 6: Font weight */
+}
+
+/* --------------------------------------------------------------------------
+   SERVICES SECTION STYLING
+   -------------------------------------------------------------------------- */
+.services-list {
+    padding-left: 22px;                        /* Concept 12: Padding */
+    margin-top: 10px;                          /* Concept 12: Margin */
+}
+
+.services-list li {
+    margin-bottom: 10px;                       /* Concept 12: Margin */
+    color: #2d3748;                            /* Concept 5: Text color */
+    font-size: 16px;                           /* Concept 6: Font size */
+}
+
+/* --------------------------------------------------------------------------
+   CONCEPT 13: WIDTH AND HEIGHT
+   CONCEPT 15: DISPLAY PROPERTY (display: block, display: inline-block)
+   CONTACT FORM STYLING
+   -------------------------------------------------------------------------- */
+.form-group {
+    margin-bottom: 18px;                       /* Concept 12: Margin between form fields */
+}
+
+.form-label {
+    display: block;                            /* Concept 15: display block */
+    font-weight: 600;                          /* Concept 6: Font weight */
+    margin-bottom: 6px;                        /* Concept 12: Margin */
+    color: #2d3748;                            /* Concept 5: Text color */
+    font-size: 14px;                           /* Concept 14: Unit in px */
+}
+
+.form-input {
+    display: block;                            /* Concept 15: display block */
+    width: 100%;                               /* Concept 13: 100% width of parent */
+    padding: 10px 14px;                        /* Concept 12: Padding */
+    border: 1px solid #cbd5e0;                 /* Concept 9: Border */
+    border-radius: 4px;                        /* Concept 10: Border radius */
+    font-size: 14px;                           /* Concept 14: Font size */
+    font-family: inherit;                      /* Inherit base font */
+    color: #2d3748;                            /* Concept 5: Color */
+    background-color: #ffffff;                 /* Concept 8: Background */
+}
+
+.form-textarea {
+    display: block;                            /* Concept 15: display block */
+    width: 100%;                               /* Concept 13: 100% width */
+    height: 120px;                             /* Concept 13: Height in px */
+    padding: 10px 14px;                        /* Concept 12: Padding */
+    border: 1px solid #cbd5e0;                 /* Concept 9: Border */
+    border-radius: 4px;                        /* Concept 10: Border radius */
+    font-size: 14px;                           /* Concept 14: Font size */
+    font-family: inherit;                      /* Inherit base font */
+    color: #2d3748;                            /* Concept 5: Color */
+    background-color: #ffffff;                 /* Concept 8: Background */
+    resize: vertical;
+}
+
+.btn-submit {
+    display: inline-block;                     /* Concept 15: display inline-block */
+    background-color: #949697;                 /* Concept 8: Button background */
+    color: #ffffff;                            /* Concept 5: White text */
+    padding: 12px 28px;                        /* Concept 12: Margin and padding */
+    border: none;                              /* Concept 9: Border removal */
+    border-radius: 5px;                        /* Concept 10: Rounded button */
+    font-size: 16px;                           /* Concept 14: Unit in px */
+    font-weight: 700;                          /* Concept 6: Bold text */
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   CONCEPT 4: ELEMENT SELECTOR
+   CONCEPT 7: TEXT STYLING
+   FOOTER STYLING
+   -------------------------------------------------------------------------- */
+footer {
+    background-color: #1a202c;                 /* Concept 8: Dark background color */
+    color: #e2e8f0;                            /* Concept 5: Light text */
+    text-align: center;                        /* Concept 7: Centered alignment */
+    padding: 30px 15px;                        /* Concept 12: Padding */
+    margin-top: 40px;                          /* Concept 12: Margin */
+}
+
+footer p {
+    color: #cbd5e0;                            /* Concept 5: Color */
+    margin-bottom: 8px;                        /* Concept 12: Margin */
+}
+
+footer a {
+    color: #805e48;                            /* Concept 5: Accent link color */
+    text-decoration: none;                     /* Concept 7: Text decoration */
+    font-weight: 600;                          /* Concept 6: Font weight */
+}
