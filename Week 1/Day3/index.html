@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Samad | Personal Portfolio (Day 3 - Modern CSS Layout)</title>
+    <meta name="description" content="Abdul Samad's personal portfolio showcasing Flexbox, CSS Grid, positioning, transitions and hover effects learned on Day 3 of the Frontend Engineering Internship.">
+
+    <!-- External CSS (Day 3 stylesheet) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- =====================================================================
+         FIXED ELEMENT: "Back to Top" button
+         Demonstrates: position: fixed  |  z-index
+         ===================================================================== -->
+    <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">&#8679;</a>
+
+    <!-- =====================================================================
+         HEADER SECTION
+         ===================================================================== -->
+    <header id="home">
+        <div class="header-inner">
+            <div class="header-brand">
+                <p><strong>My Portfolio</strong></p>
+                <h1>Abdul Samad</h1>
+                <p>Computer Science Student &amp; Aspiring Frontend Developer</p>
+            </div>
+
+            <!-- Profile image wrapper — uses position: relative for the badge -->
+            <div class="profile-wrapper">
+                <img src="../Day2/images/profile.jpg"
+                     alt="Professional profile photo of Abdul Samad"
+                     class="profile-img">
+                <!-- Demonstrates: position: absolute  |  z-index -->
+                <span class="profile-badge">Available</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         NAVIGATION BAR — Hands-On Task 1: Responsive Flexbox Navigation
+         Demonstrates: display: flex | justify-content | align-items |
+                       flex-direction | flex-wrap | position: sticky | z-index
+         ===================================================================== -->
+    <nav id="main-nav">
+        <!-- Logo/brand on the left -->
+        <div class="nav-brand">AS</div>
+
+        <!-- Navigation links — flex items -->
+        <ul class="nav-links">
+            <li><a href="#home"      class="nav-link">Home</a></li>
+            <li><a href="#about"     class="nav-link">About</a></li>
+            <li><a href="#skills"    class="nav-link">Skills</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#projects"  class="nav-link">Projects</a></li>
+            <li><a href="#services"  class="nav-link">Services</a></li>
+            <li><a href="#contact"   class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- =====================================================================
+         MAIN CONTENT AREA
+         ===================================================================== -->
+    <main>
+
+        <!-- =================================================================
+             ABOUT SECTION
+             ================================================================= -->
+        <section id="about" class="section-card">
+            <h2>About Me</h2>
+            <p>
+                Hello! My name is Abdul Samad. I am an enthusiastic Computer Science
+                undergraduate with a deep curiosity for how the internet works and how
+                software interfaces are crafted. My academic journey provides me with
+                strong problem-solving abilities, algorithmic thinking, and computer
+                science principles.
+            </p>
+            <p>
+                Currently, I am focusing my efforts on frontend web engineering through
+                this intensive internship. After establishing clean HTML5 semantic
+                structures on Day 1 and applying foundational CSS styling on Day 2,
+                I am now mastering modern CSS layout techniques on Day 3.
+            </p>
+            <p>
+                When I am not coding, I enjoy exploring open-source software, reading
+                technical documentation, and collaborating with fellow learners on
+                practical student projects. My long-term goal is to grow into a skilled
+                full-stack developer who creates impactful web solutions.
+            </p>
+        </section>
+
+        <!-- =================================================================
+             SKILLS SECTION — Hands-On Task 2: Flexbox Cards
+             Demonstrates: display: flex | flex-wrap | gap | justify-content |
+                           align-items | CSS Transitions | Hover Effects |
+                           position: relative | position: absolute | z-index
+             ================================================================= -->
+        <section id="skills" class="section-card">
+            <h2>My Skills</h2>
+            <p>Technologies and tools I am currently learning and working with:</p>
+
+            <!-- Flex container for skill cards -->
+            <div class="skills-flex-container">
+
+                <div class="skill-card">
+                    <!-- Absolutely positioned icon — relative/absolute positioning demo -->
+                    <span class="skill-icon">&lt;/&gt;</span>
+                    <h3>HTML5</h3>
+                    <p>Semantic markup, accessibility, document structure.</p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">&#10047;</span>
+                    <h3>CSS3</h3>
+                    <p>Flexbox, Grid, positioning, transitions, and more.</p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">JS</span>
+                    <h3>JavaScript</h3>
+                    <p>Core programming logic and DOM interaction basics.</p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">Git</span>
+                    <h3>Git</h3>
+                    <p>Version control, commits, branching, and collaboration.</p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">GH</span>
+                    <h3>GitHub</h3>
+                    <p>Remote repositories, pull requests, and code review.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =================================================================
+             EDUCATION SECTION
+             ================================================================= -->
+        <section id="education" class="section-card">
+            <h2>Education</h2>
+            <p>My academic background and qualifications:</p>
+            <table class="education-table">
+                <thead>
+                    <tr>
+                        <th>Degree</th>
+                        <th>Institution</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bachelor of Science in Computer Science</td>
+                        <td>Federal Urdu University of Arts Science and Technology</td>
+                        <td>2026 -</td>
+                    </tr>
+                    <tr>
+                        <td>Intermediate in Pre-Engineering</td>
+                        <td>Islamabad Model College for Boys G-6/3 Islamabad</td>
+                        <td>2019 - 2021</td>
+                    </tr>
+                    <tr>
+                        <td>Secondary School Certificate (Matriculation)</td>
+                        <td>Islamabad Career College Barakhau Islamabad</td>
+                        <td>2017 - 2019</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- =================================================================
+             PROJECTS SECTION — Hands-On Task 3: CSS Grid Multi-Column Layout
+             Demonstrates: display: grid | grid-template-columns |
+                           grid-template-rows | grid-template-areas |
+                           grid-area | gap | CSS Transitions | Hover Effects
+             ================================================================= -->
+        <section id="projects" class="section-card">
+            <h2>Projects</h2>
+            <p>Hands-on projects and exercises I have developed:</p>
+
+            <!-- CSS Grid container with named grid areas -->
+            <div class="projects-grid">
+
+                <!-- grid-area: featured -->
+                <article class="project-card featured-project">
+                    <div class="project-card-header">
+                        <h3>Personal Portfolio Website</h3>
+                        <span class="project-tag">Featured</span>
+                    </div>
+                    <p>
+                        A multi-day portfolio project evolving from pure HTML on Day 1,
+                        through CSS fundamentals on Day 2, to modern layout techniques
+                        on Day 3. Demonstrates progressive enhancement of real-world
+                        frontend skills.
+                    </p>
+                    <a href="#home" class="project-link">View Project Details</a>
+                </article>
+
+                <!-- grid-area: card1 -->
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <h3>Movie Information Portal</h3>
+                        <span class="project-tag">Web</span>
+                    </div>
+                    <p>
+                        A conceptual web project focused on structuring cinema
+                        showtimes, movie overviews, and cast information using
+                        semantic markup and content hierarchy.
+                    </p>
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </article>
+
+                <!-- grid-area: card2 -->
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <h3>Student Registration Portal</h3>
+                        <span class="project-tag">Forms</span>
+                    </div>
+                    <p>
+                        An academic portal interface designed to practice comprehensive
+                        HTML5 forms, fieldsets, input types, and structured tabular
+                        displays.
+                    </p>
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- =================================================================
+             SERVICES SECTION — Flexbox Cards
+             Demonstrates: display: flex | flex-wrap | gap | Hover Effects |
+                           CSS Transitions
+             ================================================================= -->
+        <section id="services" class="section-card">
+            <h2>Services</h2>
+            <p>Web capabilities I offer as an aspiring frontend developer:</p>
+
+            <!-- Flex container for service cards -->
+            <div class="services-flex-container">
+
+                <div class="service-card">
+                    <div class="service-icon">&#128187;</div>
+                    <h3>Frontend Development</h3>
+                    <p>Building responsive, accessible web interfaces using HTML5, CSS3, and modern layout techniques.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">&#127760;</div>
+                    <h3>Basic Website Development</h3>
+                    <p>Creating clean, well-structured static websites for personal and academic use.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">&#128196;</div>
+                    <h3>HTML Website Development</h3>
+                    <p>Crafting semantically correct, standards-compliant HTML5 documents and templates.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">&#128270;</div>
+                    <h3>Semantic Structure Auditing</h3>
+                    <p>Reviewing and improving HTML document structure for clarity, accessibility, and SEO.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =================================================================
+             CONTACT SECTION
+             ================================================================= -->
+        <section id="contact" class="section-card">
+            <h2>Contact Me</h2>
+            <p>Have a question or want to work together? Please fill out the form below:</p>
+
+            <form action="#" method="post" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone:</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+92 300 0000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject:</label>
+                        <input type="text" id="subject" name="subject" class="form-input" placeholder="Message subject" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="form-label">Message:</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- =====================================================================
+         FOOTER SECTION
+         ===================================================================== -->
+    <footer>
+        <p>&copy; 2026 Abdul Samad. All rights reserved.</p>
+        <p>
+            Connect with me:
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a> |
+            <a href="mailto:abdulsamad@example.com">Email</a>
+        </p>
+        <p>
+            <a href="#Home">Back to top</a>
+        </p>
+    </footer>
+
+</body>     
+</html>

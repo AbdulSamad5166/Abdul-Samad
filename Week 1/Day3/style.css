@@ -1,0 +1,820 @@
+/* ==========================================================================
+   FRONTEND ENGINEERING INTERNSHIP - WEEK 1, DAY 3
+   TOPIC: MODERN CSS LAYOUT
+   STUDENT: Abdul Samad
+   
+   Day 3 builds directly on the Day 2 portfolio base.
+   Concepts covered:
+     - Flexbox (flex container, flex items, justify-content, align-items,
+                flex-direction, flex-wrap)
+     - CSS Grid (grid rows/columns, grid areas, gap)
+     - Positioning (relative, absolute, fixed, sticky)
+     - Z-index
+     - CSS Transitions
+     - Hover Effects
+   ========================================================================== */
+
+
+/* ==========================================================================
+   BASE RESET & BODY
+   (Carried forward from Day 2 foundation)
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #f0f4f8;
+}
+
+
+/* ==========================================================================
+   POSITIONING
+   Demonstrates: position: fixed | z-index
+   
+   Back-to-top button stays fixed in the bottom-right corner of the viewport
+   regardless of scroll position.
+   ========================================================================== */
+
+/* Positioning */
+
+/* position: fixed */
+.back-to-top {
+    position: fixed;          /* Stays in viewport — does NOT scroll with page */
+    bottom: 28px;
+    right: 28px;
+
+    /* Z-Index */
+    z-index: 999;             /* Sits above all page content */
+
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 26px;
+    line-height: 44px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.35);
+
+    /* CSS Transitions */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effects */
+.back-to-top:hover {
+    background-color: #1a365d;
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================================================
+   HEADER SECTION
+   Demonstrates: Flexbox (flex container, justify-content, align-items)
+                 position: relative (for the profile badge)
+   ========================================================================== */
+
+header {
+    background-color: #5b6eac;
+    color: #7498c0;
+    padding: 35px 20px;
+    border-bottom: 4px solid #a3b7c4;                   
+}
+
+/* Flexbox */
+/* Flex Container and Flex Items */
+
+.header-inner {
+    display: flex;              /* Flex container */
+    flex-direction: row;        /* Flex Direction: horizontal layout (default) */
+    justify-content: space-between; /* Justify Content: brand left, image right */
+    align-items: center;        /* Align Items: vertically centered */
+    flex-wrap: wrap;            /* Flex Wrap: stacks on narrow screens */
+    gap: 24px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Flex items inside .header-inner */
+.header-brand {
+    flex: 1;
+}
+
+.header-brand p {
+    font-size: 14px;
+    color: #e2e8f0;
+    margin-bottom: 6px;
+}
+
+.header-brand h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+
+/* ==========================================================================
+   POSITIONING
+   Demonstrates: position: relative | position: absolute | z-index
+   
+   .profile-wrapper is position: relative so the .profile-badge child
+   can be positioned absolutely within it.
+   ========================================================================== */
+
+/* position: relative */
+.profile-wrapper {
+    position: relative;        /* Establishes a positioning context for children */
+    display: inline-block;
+}
+
+.profile-img {
+    display: block;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    object-fit: cover;
+
+    /* CSS Transitions */
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effects */
+.profile-img:hover {
+    border-color: #63b3ed;
+    transform: scale(1.04);
+}
+
+/* position: absolute */
+.profile-badge {
+    position: absolute;        /* Positioned relative to .profile-wrapper */
+    bottom: 6px;
+    right: 0px;
+
+    /* Z-Index */
+    z-index: 10;               /* Sits above the profile image */
+
+    background-color: #48bb78;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   NAVIGATION BAR — Hands-On Task 1: Responsive Flexbox Navigation
+   
+   Demonstrates:
+     - Flexbox (flex container, justify-content, align-items, flex-wrap)
+     - position: sticky | z-index
+     - CSS Transitions | Hover Effects
+   ========================================================================== */
+
+/* Positioning */
+
+/* position: sticky */
+#main-nav {
+    position: sticky;          /* Sticks to the top of the viewport when scrolled */
+    top: 0;
+
+    /* Z-Index */
+    z-index: 100;              /* Stays above main page content while scrolling */
+
+    background-color: #0a0e1a;
+    padding: 10px 20px;
+    border-bottom: 2px solid #2b6cb0;
+}
+
+/* Flexbox */
+/* Flex Container and Flex Items */
+
+#main-nav {
+    display: flex;             /* Flex container */
+    flex-direction: row;       /* Flex Direction: horizontal */
+    justify-content: space-between; /* Justify Content: brand left, links right */
+    align-items: center;       /* Align Items: vertically centered */
+    flex-wrap: wrap;           /* Flex Wrap: wraps links on small screens */
+    gap: 12px;
+}
+
+.nav-brand {
+    color: #63b3ed;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    flex-shrink: 0;            /* Flex item — does not shrink */
+}
+
+/* Justify Content */
+/* Align Items */
+
+.nav-links {
+    display: flex;             /* Flex container (nested) */
+    flex-direction: row;       /* Flex Direction: horizontal */
+    flex-wrap: wrap;           /* Flex Wrap: wraps on narrow screens */
+    justify-content: flex-end; /* Justify Content: links aligned to the right */
+    align-items: center;       /* Align Items: vertically centered */
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    /* Each li is a flex item of .nav-links */
+}
+
+.nav-link {
+    display: inline-block;
+    color: #edf2f7;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 4px;
+    background-color: #2d3748;
+
+    /* CSS Transitions */
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+/* Hover Effects */
+.nav-link:hover {
+    background-color: #2b6cb0;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   MAIN LAYOUT CONTAINER
+   ========================================================================== */
+
+main {
+    width: 92%;
+    max-width: 1100px;
+    margin: 32px auto;
+}
+
+.section-card {
+    background-color: #ffffff;
+    margin-bottom: 28px;
+    padding: 32px 34px;
+    border: 1px solid #cbd5e0;
+    border-radius: 10px;
+}
+
+/* ID section scroll offset */
+#home,
+#about,
+#skills,
+#education,
+#projects,
+#services,
+#contact {
+    scroll-margin-top: 68px;
+}
+
+h2 {
+    color: #1a365d;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+p {
+    margin-bottom: 14px;
+    color: #4a5568;
+}
+
+
+/* ==========================================================================
+   SKILLS SECTION — Hands-On Task 2: Cards Using Flexbox
+   
+   Demonstrates:
+     - display: flex | flex-wrap | gap | justify-content | align-items
+     - position: relative | position: absolute | z-index
+     - CSS Transitions | Hover Effects
+   ========================================================================== */
+
+/* Flexbox */
+/* Flex Container and Flex Items */
+
+.skills-flex-container {
+    display: flex;             /* Flex container — direct children become flex items */
+    flex-direction: row;       /* Flex Direction: horizontal layout */
+    flex-wrap: wrap;           /* Flex Wrap: cards drop to next row when no space */
+    justify-content: flex-start; /* Justify Content: items start from left */
+    align-items: stretch;      /* Align Items: all cards same height */
+
+    /* Gap */
+    gap: 20px;                 /* Gap between flex items */
+    margin-top: 18px;
+}
+
+/* Each .skill-card is a flex item */
+
+/* Positioning */
+
+/* position: relative */
+.skill-card {
+    position: relative;        /* Needed so .skill-icon can be absolutely positioned */
+    flex: 1 1 160px;           /* Flex item: can grow, shrink, min 160px wide */
+    background-color: #ebf8ff;
+    border: 1px solid #bee3f8;
+    border-radius: 8px;
+    padding: 40px 18px 18px 18px;
+    text-align: center;
+
+    /* CSS Transitions */
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effects */
+.skill-card:hover {
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(43, 108, 176, 0.18);
+    transform: translateY(-5px);
+}
+
+/* Positioning */
+
+/* position: absolute */
+.skill-icon {
+    position: absolute;        /* Positioned relative to .skill-card */
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* Z-Index */
+    z-index: 5;                /* Sits above the card background */
+
+    background-color: #2b6cb0;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.skill-card h3 {
+    color: #1a365d;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    color: #4a5568;
+    margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   EDUCATION TABLE
+   ========================================================================== */
+
+.education-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.education-table th,
+.education-table td {
+    border: 1px solid #cbd5e0;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.education-table th {
+    background-color: #edf2f7;
+    color: #1a202c;
+    font-weight: 700;
+}
+
+.education-table td {
+    background-color: #ffffff;
+    color: #4a5568;
+
+    /* CSS Transitions */
+    transition: background-color 0.2s ease;
+}
+
+/* Hover Effects */
+.education-table tbody tr:hover td {
+    background-color: #ebf8ff;
+}
+
+
+/* ==========================================================================
+   PROJECTS SECTION — Hands-On Task 3: Multi-Column CSS Grid Layout
+   
+   Demonstrates:
+     - display: grid
+     - grid-template-columns
+     - grid-template-rows
+     - grid-template-areas (named areas)
+     - grid-area
+     - gap
+     - CSS Transitions | Hover Effects
+   ========================================================================== */
+
+/* CSS Grid */
+/* Grid Rows and Columns */
+/* Grid Areas */
+
+.projects-grid {
+    display: grid;             /* Grid container */
+
+    /* Grid Rows and Columns */
+    grid-template-columns: 2fr 1fr 1fr;  /* 3 columns: featured wider, others equal */
+    grid-template-rows: auto;            /* Rows size to content */
+
+    /* Grid Areas */
+    grid-template-areas:
+        "featured card1 card2"; /* Named grid area layout */
+
+    /* Gap */
+    gap: 20px;                 /* Gap between grid cells (row-gap and column-gap) */
+    margin-top: 18px;
+}
+
+/* Grid area assignment for each card */
+.featured-project {
+    grid-area: featured;       /* grid-area: places this card in "featured" zone */
+}
+
+.project-card:nth-child(2) {
+    grid-area: card1;          /* grid-area: places this card in "card1" zone */
+}
+
+.project-card:nth-child(3) {
+    grid-area: card2;          /* grid-area: places this card in "card2" zone */
+}
+
+/* Positioning */
+
+/* position: relative */
+.project-card {
+    position: relative;        /* Positioning context for any absolute children */
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;    /* Flex Direction: stack header, text, link vertically */
+    gap: 10px;
+
+    /* CSS Transitions */
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover Effects */
+.project-card:hover {
+    box-shadow: 0 10px 28px rgba(26, 54, 93, 0.15);
+    transform: translateY(-4px);
+    border-color: #90cdf4;
+}
+
+.project-card-header {
+    display: flex;             /* Flex container */
+    flex-direction: row;       /* Flex Direction: horizontal */
+    justify-content: space-between; /* Justify Content: title left, tag right */
+    align-items: flex-start;   /* Align Items: top-aligned */
+    flex-wrap: wrap;           /* Flex Wrap: wrap if too narrow */
+    gap: 8px;
+}
+
+.project-card h3 {
+    color: #2b6cb0;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.project-tag {
+    background-color: #ebf8ff;
+    color: #2b6cb0;
+    border: 1px solid #bee3f8;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #4a5568;
+    flex-grow: 1;              /* Flex item: grows to push link to bottom */
+    margin-bottom: 0;
+}
+
+.project-link {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 8px 18px;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+
+    /* CSS Transitions */
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+/* Hover Effects */
+.project-link:hover {
+    background-color: #1a365d;
+    transform: translateX(3px);
+}
+
+
+/* ==========================================================================
+   SERVICES SECTION — Flexbox Cards
+   
+   Demonstrates:
+     - display: flex | flex-wrap | gap | justify-content | align-items
+     - CSS Transitions | Hover Effects
+   ========================================================================== */
+
+/* Flexbox */
+/* Flex Container and Flex Items */
+
+.services-flex-container {
+    display: flex;             /* Flex container */
+    flex-direction: row;       /* Flex Direction: horizontal */
+    flex-wrap: wrap;           /* Flex Wrap: cards wrap to next row */
+    justify-content: flex-start; /* Justify Content */
+    align-items: stretch;      /* Align Items: equal height cards */
+
+    /* Gap */
+    gap: 20px;                 /* Gap between service cards */
+    margin-top: 18px;
+}
+
+/* Each .service-card is a flex item */
+.service-card {
+    flex: 1 1 200px;           /* Flex item: grow, shrink, min 200px */
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 24px 20px;
+    text-align: center;
+
+    /* CSS Transitions */
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effects */
+.service-card:hover {
+    background-color: #ffffff;
+    box-shadow: 0 8px 22px rgba(26, 54, 93, 0.12);
+    transform: translateY(-4px);
+}
+
+.service-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.service-card h3 {
+    color: #1a365d;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    font-size: 13px;
+    color: #4a5568;
+    margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   CONTACT FORM
+   
+   Demonstrates:
+     - Flexbox (form-row layout)
+     - CSS Transitions | Hover Effects
+   ========================================================================== */
+
+/* Flexbox */
+
+.contact-form {
+    margin-top: 14px;
+}
+
+/* Flex container for two-column form rows */
+.form-row {
+    display: flex;             /* Flex container */
+    flex-direction: row;       /* Flex Direction: side by side fields */
+    flex-wrap: wrap;           /* Flex Wrap: stacks on small screens */
+    gap: 18px;                 /* Gap between fields */
+    margin-bottom: 0;
+}
+
+/* Each .form-group in a .form-row is a flex item */
+.form-row .form-group {
+    flex: 1 1 200px;           /* Flex item: grows equally, min 200px */
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #2d3748;
+    background-color: #ffffff;
+
+    /* CSS Transitions */
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover Effects */
+.form-input:focus,
+.form-input:hover {
+    outline: none;
+    border-color: #2b6cb0;
+    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+}
+
+.form-textarea {
+    display: block;
+    width: 100%;
+    height: 130px;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #2d3748;
+    background-color: #ffffff;
+    resize: vertical;
+
+    /* CSS Transitions */
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover Effects */
+.form-textarea:focus,
+.form-textarea:hover {
+    outline: none;
+    border-color: #2b6cb0;
+    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+}
+
+.btn-submit {
+    display: inline-block;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+
+    /* CSS Transitions */
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+/* Hover Effects */
+.btn-submit:hover {
+    background-color: #1a365d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(26, 54, 93, 0.25);
+}
+
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer {
+    background-color: #1a202c;
+    color: #e2e8f0;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 40px;
+}
+
+footer p {
+    color: #cbd5e0;
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #63b3ed;
+    text-decoration: none;
+    font-weight: 600;
+
+    /* CSS Transitions */
+    transition: color 0.2s ease;
+}
+
+/* Hover Effects */
+footer a:hover {
+    color: #90cdf4;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   Demonstrates: flex-direction | flex-wrap adapting at smaller screen widths
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Flex Direction: stack header content vertically on mobile */
+    .header-inner {
+        flex-direction: column;    /* Flex Direction: column on small screens */
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Flex Direction: stack nav items vertically on mobile */
+    #main-nav {
+        flex-direction: column;    /* Flex Direction: column layout */
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        justify-content: flex-start; /* Justify Content: left-align wrapped links */
+        width: 100%;
+    }
+
+    /* CSS Grid: switch to single column on mobile */
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column */
+        grid-template-areas:
+            "featured"
+            "card1"
+            "card2";                /* Stack grid areas vertically */
+    }
+
+    /* Flex Wrap: service cards stack to one per row on very small screens */
+    .services-flex-container {
+        flex-direction: column;    /* Flex Direction: column on mobile */
+    }
+
+    /* Flex Wrap: form rows stack on mobile */
+    .form-row {
+        flex-direction: column;    /* Flex Direction: column for form on mobile */
+    }
+}
+
+@media (max-width: 540px) {
+
+    /* Skills: stack cards vertically */
+    .skills-flex-container {
+        flex-direction: column;    /* Flex Direction: column on very small screens */
+        align-items: stretch;
+    }
+
+    .skill-card {
+        flex: 1 1 auto;
+    }
+}
