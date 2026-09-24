@@ -18,11 +18,8 @@ This project is part of the **Frontend Engineering Internship (Week 1, Day 1)** 
 
 ```text
 Day 1/
-├── README.md
-└── Task/
-    ├── index.html
-    └── images/
-        └── profile.jpg
+├── index.html
+└── README.md
 ```
 
 ---
