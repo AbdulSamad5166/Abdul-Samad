@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A modern, responsive, and elegant weather checker application providing real-time weather forecasts across global cities.">
+
+    <title>Weather Checker — Real-Time Weather Forecast</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="weather-app" id="mainApp">
+
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo" aria-hidden="true">
+                <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+
+            <div class="header-text">
+                <h1>Weather Checker</h1>
+                <p>Check real-time weather conditions for any city</p>
+            </div>
+        </header>
+
+
+        <!-- Search Section -->
+        <section class="search-section" aria-label="Search city weather">
+
+            <form id="searchForm" class="search-box" novalidate>
+                <label for="cityInput" class="sr-only">Enter city name</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-location-dot input-icon" aria-hidden="true"></i>
+                    <input type="text" id="cityInput" placeholder="Search for a city (e.g., Tokyo, London, New York)..."
+                        autocomplete="off" spellcheck="false" aria-label="City name" maxlength="80">
+                </div>
+
+                <button id="searchBtn" type="submit" aria-label="Search weather">
+                    <i id="searchBtnIcon" class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <span id="searchBtnText">Search</span>
+                </button>
+            </form>
+
+            <!-- Error message container -->
+            <p id="errorMessage" class="error-message" role="alert" aria-live="polite"></p>
+
+        </section>
+
+
+        <!-- Weather Section -->
+        <section id="weatherContainer" class="weather-container hidden" aria-live="polite">
+
+            <!-- Main Weather Card -->
+            <div class="weather-main">
+
+                <div class="location-header">
+                    <h2 id="cityName">--</h2>
+                    <span id="countryName" class="country-badge">--</span>
+                </div>
+
+                <div class="weather-hero">
+                    <div class="icon-wrapper">
+                        <img id="weatherIcon" src="" alt="Weather condition" width="120" height="120">
+                    </div>
+
+                    <div class="temp-condition-group">
+                        <div class="temperature">
+                            <span id="temperature">--</span><span class="temp-unit">°C</span>
+                        </div>
+                        <h3 id="weatherCondition">--</h3>
+                    </div>
+                </div>
+
+                <p class="feels-like">
+                    <i class="fa-solid fa-temperature-three-quarters" aria-hidden="true"></i>
+                    <span>Feels like <strong id="feelsLike">--</strong>°C</span>
+                </p>
+
+            </div>
+
+
+            <!-- Weather Details Grid -->
+            <div class="weather-details" aria-label="Detailed weather statistics">
+
+                <div class="weather-card">
+                    <div class="card-icon humidity-icon" aria-hidden="true">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-label">Humidity</span>
+                        <strong id="humidity" class="card-value">--%</strong>
+                    </div>
+                </div>
+
+                <div class="weather-card">
+                    <div class="card-icon wind-icon" aria-hidden="true">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-label">Wind Speed</span>
+                        <strong id="windSpeed" class="card-value">-- m/s</strong>
+                    </div>
+                </div>
+
+                <div class="weather-card">
+                    <div class="card-icon pressure-icon" aria-hidden="true">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-label">Pressure</span>
+                        <strong id="pressure" class="card-value">-- hPa</strong>
+                    </div>
+                </div>
+
+                <div class="weather-card">
+                    <div class="card-icon visibility-icon" aria-hidden="true">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-label">Visibility</span>
+                        <strong id="visibility" class="card-value">-- km</strong>
+                    </div>
+                </div>
+
+                <div class="weather-card">
+                    <div class="card-icon cloudiness-icon" aria-hidden="true">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-label">Cloudiness</span>
+                        <strong id="cloudiness" class="card-value">--%</strong>
+                    </div>
+                </div>
+
+                <div class="weather-card">
+                    <div class="card-icon minmax-icon" aria-hidden="true">
+                        <i class="fa-solid fa-temperature-half"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-label">Min / Max</span>
+                        <strong id="minMax" class="card-value">-- / -- °C</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Initial / Welcome Message -->
+        <section id="welcomeMessage" class="welcome-message">
+
+            <div class="welcome-icon-box" aria-hidden="true">
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+
+            <h2>Search for a City</h2>
+
+            <p>
+                Enter any city name above to view current temperature, wind speed, humidity, and complete atmospheric
+                conditions.
+            </p>
+
+            <div class="quick-hints">
+                <span class="hint-label">Popular searches:</span>
+                <button type="button" class="hint-chip" data-city="London">London</button>
+                <button type="button" class="hint-chip" data-city="Tokyo">Tokyo</button>
+                <button type="button" class="hint-chip" data-city="New York">New York</button>
+                <button type="button" class="hint-chip" data-city="Paris">Paris</button>
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p class="developer-credit">
+                Designed & Developed by <strong>ABDUL SAMAD</strong>
+            </p>
+            <p class="data-credit">
+                Weather data provided in real time by <a href="https://openweathermap.org/" target="_blank"
+                    rel="noopener noreferrer">OpenWeather</a>
+            </p>
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
