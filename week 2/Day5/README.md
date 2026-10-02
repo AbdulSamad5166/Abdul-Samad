@@ -35,7 +35,7 @@ Weather Checker is a responsive web application that looks up current weather co
 ## Project Structure
 
 ```text
-DAY 5/
+Day5/
 ├── index.html
 ├── style.css
 ├── script.js
