@@ -1,0 +1,6 @@
+{
+  "name": "Product Management Dashboard",
+  "description": "A comprehensive Week 5 product management dashboard with authentication, product CRUD, category filtering, search, pagination, users list, and dark mode.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
